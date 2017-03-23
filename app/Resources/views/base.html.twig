@@ -143,19 +143,7 @@
         {% endblock %}
 
         {% block javascripts %}
-        {# uncomment the following lines to combine and minimize JavaScript assets with Assetic
-            {% javascripts filter="?jsqueeze" output="js/app.js"
-                "%kernel.root_dir%/Resources/assets/js/jquery-2.1.4.js"
-                "%kernel.root_dir%/Resources/assets/js/moment.min.js"
-                "%kernel.root_dir%/Resources/assets/js/bootstrap-3.3.4.js"
-                "%kernel.root_dir%/Resources/assets/js/highlight.pack.js"
-                "%kernel.root_dir%/Resources/assets/js/bootstrap-datetimepicker.min.js"
-                "%kernel.root_dir%/Resources/assets/js/main.js" %}
-                <script src="{{ asset_url }}"></script>
-            {% endjavascripts %}
-        #}
-
-            <script src="{{ asset('js/app.js') }}"></script>
+            <script src="{{ asset('builds/bundle.js') }}"></script>
         {% endblock %}
 
         {# it's not mandatory to set the timezone in localizeddate(). This is done to
