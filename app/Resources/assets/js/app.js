@@ -7,4 +7,4 @@
  * file that was distributed with this source code.
  */
 
-console.log('Symfony Live Paris 2017');
+import "../scss/app.scss";
