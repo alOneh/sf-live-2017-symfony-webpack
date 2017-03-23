@@ -1,0 +1,9 @@
+{
+  "name": "sf-live-2017-symfony-webpack",
+  "version": "0.0.1",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "webpack": "^2.3.1"
+  }
+}
