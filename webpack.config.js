@@ -23,7 +23,11 @@ module.exports = {
                     { loader: "css-loader" },
                     { loader: "sass-loader" }
                 ]
-            }
+            },
+            {
+                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+                use: "url-loader"
+           }
         ]
     },
     resolve: {
