@@ -25,5 +25,10 @@ module.exports = {
                 ]
             }
         ]
+    },
+    resolve: {
+        alias: {
+            fonts: path.resolve(__dirname, 'web/fonts')
+        }
     }
 };
