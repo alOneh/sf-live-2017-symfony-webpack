@@ -8,3 +8,5 @@
  */
 
 import "../scss/app.scss";
+
+import "./jquery-2.1.4.min";
