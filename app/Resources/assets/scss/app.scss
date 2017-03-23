@@ -1,4 +1,7 @@
-@import "../scss/bootstrap-flatly";
 $fa-font-path: "~fonts/font-awesome";
+$lato-font-path: "~fonts/lato";
+
+@import "../scss/bootstrap-flatly";
 @import "../scss/font-awesome";
 @import "../css/bootstrap-datetimepicker.min.css";
+@import "../scss/font-lato";
