@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -19,11 +20,10 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader" },
-                    { loader: "sass-loader" }
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                })
             },
             {
                 test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
@@ -47,6 +47,7 @@ module.exports = {
             hljs: path.resolve(__dirname, 'app/Resources/assets/js/highlight.pack.js')
         }),
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+        new ExtractTextPlugin('app.css')
     ],
     resolve: {
         alias: {
