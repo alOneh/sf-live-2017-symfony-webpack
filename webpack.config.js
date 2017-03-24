@@ -28,7 +28,14 @@ module.exports = {
             {
                 test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
                 use: "url-loader"
-           }
+            },
+            {
+                test: /jquery/,
+                use: [
+                    { loader: 'expose-loader', options: '$' },
+                    { loader: 'expose-loader', options: 'jQuery' }
+                ]
+            }
         ]
     },
     plugins: [
