@@ -36,6 +36,7 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery",
+            hljs: path.resolve(__dirname, 'app/Resources/assets/js/highlight.pack.js')
         }),
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ],
