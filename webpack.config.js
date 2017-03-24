@@ -4,11 +4,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: path.resolve(__dirname, 'app/Resources/assets/js/app.js')
+        app: path.resolve(__dirname, 'app/Resources/assets/js/app.js'),
+        vendor: [
+            'jquery',
+            'moment',
+            'highlightjs',
+            'bootstrap',
+        ]
     },
     output: {
         path: path.resolve(__dirname, 'web/builds'),
-        filename: 'bundle.js',
+        filename: '[name].js',
         publicPath: '/builds/'
     },
     module: {
@@ -47,13 +53,16 @@ module.exports = {
             hljs: path.resolve(__dirname, 'app/Resources/assets/js/highlight.pack.js')
         }),
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-        new ExtractTextPlugin('app.css')
+        new ExtractTextPlugin('[name].css'),
+        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
     ],
     resolve: {
         alias: {
             fonts: path.resolve(__dirname, 'web/fonts'),
             jquery: path.resolve(__dirname, 'app/Resources/assets/js/jquery-2.1.4.min.js'),
-            moment: path.resolve(__dirname, 'app/Resources/assets/js/moment.min.js')
+            moment: path.resolve(__dirname, 'app/Resources/assets/js/moment.min.js'),
+            highlightjs: path.resolve(__dirname, 'app/Resources/assets/js/highlight.pack.js'),
+            bootstrap: path.resolve(__dirname, 'app/Resources/assets/js/bootstrap-3.3.4.min.js')
         }
     },
     devtool: 'eval-cheap-module-source-map',

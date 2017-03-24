@@ -131,7 +131,8 @@
         {% endblock %}
 
         {% block javascripts %}
-            <script src="{{ asset('builds/bundle.js') }}"></script>
+            <script src="{{ asset('builds/vendor.js') }}"></script>
+            <script src="{{ asset('builds/app.js') }}"></script>
         {% endblock %}
 
         {# it's not mandatory to set the timezone in localizeddate(). This is done to
