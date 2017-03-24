@@ -14,3 +14,4 @@ import "./moment.min";
 import "./bootstrap-3.3.4.min";
 import "./highlight.pack";
 import "./bootstrap-datetimepicker.min";
+import "./main";
