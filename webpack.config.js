@@ -39,6 +39,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
@@ -53,5 +54,10 @@ module.exports = {
             jquery: path.resolve(__dirname, 'app/Resources/assets/js/jquery-2.1.4.min.js'),
             moment: path.resolve(__dirname, 'app/Resources/assets/js/moment.min.js')
         }
+    },
+    devtool: 'eval-cheap-module-source-map',
+    devServer: {
+        hot: true,
+        contentBase: './web/'
     }
 };
