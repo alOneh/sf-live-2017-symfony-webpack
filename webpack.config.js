@@ -41,7 +41,8 @@ module.exports = {
     resolve: {
         alias: {
             fonts: path.resolve(__dirname, 'web/fonts'),
-            jquery: path.resolve(__dirname, 'app/Resources/assets/js/jquery-2.1.4.min.js')
+            jquery: path.resolve(__dirname, 'app/Resources/assets/js/jquery-2.1.4.min.js'),
+            moment: path.resolve(__dirname, 'app/Resources/assets/js/moment.min.js')
         }
     }
 };
