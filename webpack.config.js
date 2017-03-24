@@ -55,6 +55,18 @@ module.exports = {
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
         new ExtractTextPlugin('[name].css'),
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+        new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
+            compress: {
+                screw_ie8: true,
+                warnings: false
+            },
+            mangle: {
+                screw_ie8: true,
+                keep_fnames: true
+            },
+            comments: false
+        }),
     ],
     resolve: {
         alias: {
