@@ -37,6 +37,7 @@ module.exports = {
             jQuery: "jquery",
             "window.jQuery": "jquery",
         }),
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ],
     resolve: {
         alias: {
