@@ -41,7 +41,8 @@ $ npm run watch
 To build assets with Webpack:
 
 ```bash
-$ npm run build
+$ npm run build:dev # for dev
+$ npm run build:dist # for prod
 ```
 
 Advanced usage
