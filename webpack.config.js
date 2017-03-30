@@ -1,6 +1,8 @@
+const production = process.env.NODE_ENV === 'production';
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
     entry: {
@@ -14,7 +16,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'web/builds'),
-        filename: '[name].js',
+        filename: production ? '[name].[hash].js' : '[name].js' ,
         publicPath: '/builds/'
     },
     module: {
@@ -67,7 +69,7 @@ module.exports = {
             hljs: path.resolve(__dirname, 'app/Resources/assets/js/highlight.pack.js')
         }),
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-        new ExtractTextPlugin('[name].css'),
+        new ExtractTextPlugin(production ? '[name].[hash].css' : '[name].css'),
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
@@ -81,6 +83,10 @@ module.exports = {
             },
             comments: false
         }),
+        new ManifestPlugin({
+            fileName: 'manifest.json',
+            basePath: 'builds/'
+        })
     ],
     resolve: {
         alias: {

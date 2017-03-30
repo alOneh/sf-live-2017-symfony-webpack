@@ -1,7 +1,10 @@
 imports:
     - { resource: config.yml }
 
-#framework:
+framework:
+    assets:
+        version_strategy: 'app.version_strategy.json_manifest'
+
 #    cache:
 #        system: cache.adapter.apcu
 

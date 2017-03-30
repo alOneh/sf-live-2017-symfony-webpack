@@ -38,3 +38,4 @@ parameters:
     secret: 'secret_value_for_symfony_demo_application'
 
     use_webpack_dev_server: true
+    json_manifest_path: '%kernel.root_dir%/../web/builds/manifest.json'
