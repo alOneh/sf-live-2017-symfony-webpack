@@ -1,6 +1,10 @@
 {
   "name": "sf-live-2017-symfony-webpack",
   "version": "0.0.1",
+  "scripts": {
+    "watch": "./node_modules/.bin/webpack-dev-server",
+    "build": "./node_modules/.bin/webpack"
+  },
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
